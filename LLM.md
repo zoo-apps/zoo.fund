@@ -1,4 +1,4 @@
-# Zoo Fund - AI Assistant Knowledge Base
+# Zoo Fund
 
 **Last Updated**: 2025-10-31
 **Project**: zoo/fund
