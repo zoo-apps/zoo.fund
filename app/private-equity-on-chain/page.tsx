@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer'
 export const metadata: Metadata = {
   title: 'Private Equity On Chain — ZOO',
   description:
-    'A compliant path to tokenize and distribute GPU-backed AI infrastructure. $113 trillion total addressable private markets opportunity, brought on chain by ZOO + liquidity.io.',
+    'A compliant path to tokenize and distribute GPU-backed AI infrastructure. $113 trillion total addressable private markets opportunity, brought on chain by ZOO.',
 }
 
 // ---------------------------------------------------------------------------
@@ -85,7 +85,7 @@ export default function PrivateEquityOnChain() {
 
             <p className="mt-6 max-w-2xl text-base text-zinc-600 sm:mt-8 sm:text-lg md:text-xl">
               A compliant path to tokenize and distribute GPU-backed AI infrastructure
-              using broker-dealer, ATS, transfer agency, and blockchain settlement rails.
+              on chain.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
@@ -220,23 +220,15 @@ export default function PrivateEquityOnChain() {
         </section>
 
         {/* ============================================================
-          LIQUIDITY.IO PITCH  (Frame 19)
+          TOTAL ADDRESSABLE MARKET  (Frame 19)
           Mobile: stacked. md+: 2-col split.
         ============================================================ */}
         <section className="px-5 sm:px-8 md:px-12 lg:px-20 py-16 sm:py-24 md:py-32 border-t border-zinc-200">
           <div className="mx-auto max-w-7xl grid gap-10 md:grid-cols-[1.4fr_1fr] md:gap-16">
             <div>
               <p className="text-lg leading-relaxed text-zinc-900 sm:text-xl md:text-2xl">
-                Through{' '}
-                <a
-                  href="https://liquidity.io"
-                  className="underline decoration-zinc-400 underline-offset-4 hover:decoration-zinc-900"
-                >
-                  liquidity.io
-                </a>
-                , ZOO gains a compliant path to tokenize and distribute GPU-backed AI
-                infrastructure using broker-dealer, ATS, transfer agency, and blockchain
-                settlement rails.
+                ZOO brings a compliant path to tokenize and distribute GPU-backed AI
+                infrastructure on chain.
               </p>
 
               <blockquote className="mt-8 border-l-2 border-zinc-300 pl-5 text-sm italic text-zinc-600 sm:mt-12 sm:text-base">
