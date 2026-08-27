@@ -56,29 +56,30 @@ export function DAOOnboardingForm() {
     })
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Opens the sender's mail client with the answers filled in. Plain, and it
+  // arrives — which the previous version did not: it logged to the console,
+  // waited two seconds to look like a network call, and then said a team would
+  // reply within days. Nothing was sent and nobody was going to reply.
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
 
-    try {
-      // In production, this would submit to your backend API
-      // For now, we'll just log and show success message
-      console.log('DAO Onboarding submission:', {
-        ...formData,
-        walletAddress: address,
-        timestamp: new Date().toISOString()
-      })
+    const body = [
+      `DAO: ${formData.name}`,
+      `Question it exists to answer: ${formData.mission}`,
+      `Target: ${formData.fundingGoal}`,
+      `Treasury: ${formData.multisig || 'not set up yet'}`,
+      `Contact: ${formData.contactEmail}`,
+      '',
+      formData.description,
+    ].join('\n')
 
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 2000))
+    window.location.href =
+      `mailto:contact@zoo.ngo?subject=${encodeURIComponent('Listing: ' + formData.name)}` +
+      `&body=${encodeURIComponent(body)}`
 
-      setSubmitted(true)
-    } catch (error) {
-      console.error('Submission error:', error)
-      alert('Failed to submit application. Please try again.')
-    } finally {
-      setSubmitting(false)
-    }
+    setSubmitted(true)
+    setSubmitting(false)
   }
 
   if (!isConnected) {
@@ -104,30 +105,22 @@ export function DAOOnboardingForm() {
         <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <span className="text-4xl">✅</span>
         </div>
-        <h3 className="text-2xl font-bold mb-4">Application Submitted!</h3>
+        <h3 className="text-2xl font-bold mb-4">Your mail client should be open</h3>
         <p className="text-white/80 mb-6">
-          Thank you for your interest in launching <strong>{formData.name}</strong>. Our team will review your application and reach out within 3-5 business days.
+          Send the message and <strong>{formData.name}</strong> reaches us. If nothing
+          opened, write to{' '}
+          <a href="mailto:contact@zoo.ngo" className="text-[#667eea] hover:underline">
+            contact@zoo.ngo
+          </a>{' '}
+          directly.
         </p>
         <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left mb-6">
-          <h4 className="text-sm font-semibold mb-3 text-white/70">Next Steps:</h4>
-          <ol className="space-y-2 text-sm text-white/60">
-            <li className="flex items-start gap-2">
-              <span className="text-green-400 font-bold">1.</span>
-              <span>Team review and governance vote (2-3 days)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-400 font-bold">2.</span>
-              <span>Smart contract deployment and multisig setup</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-400 font-bold">3.</span>
-              <span>DAO page creation and fundraising launch</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-400 font-bold">4.</span>
-              <span>Community onboarding and first proposals</span>
-            </li>
-          </ol>
+          <p className="text-sm text-white/60 leading-relaxed">
+            We read it, and if it fits we publish a page for the DAO here. From
+            there the DAO deploys its own contracts, holds its own treasury and
+            runs its own raise — Zoo Labs Foundation lists it and takes nothing.
+            No fee, no cut, and no contribution passes through this site.
+          </p>
         </div>
         <button
           onClick={() => { setSubmitted(false); setStep(1); setFormData({
@@ -465,20 +458,20 @@ export function DAOOnboardingPage() {
           <div className="space-y-4">
             {[
               {
-                q: 'How long does the approval process take?',
-                a: 'Typically 3-5 business days. Your application will be reviewed by the Zoo community through our governance process.'
+                q: 'What does Zoo take?',
+                a: 'Nothing. No platform fee, no percentage of a raise, no cut of a treasury. Zoo Labs Foundation lists research DAOs because that is what a research foundation is for, and a fee taken out of money raised would make it something else.'
               },
               {
-                q: 'What are the requirements to launch a DAO?',
-                a: 'You need a clear conservation mission, initial team/partners, and a multisig wallet. We welcome DAOs at all funding stages.'
+                q: 'Who runs the raise?',
+                a: 'The DAO does. It deploys its own contracts, holds its own treasury and raises on its own terms. Nothing passes through this site and Zoo never holds a contribution.'
               },
               {
-                q: 'Do I need technical expertise?',
-                a: 'No! We handle smart contract deployment and technical setup. You focus on your conservation mission.'
+                q: 'What do you need from me?',
+                a: 'One question worth answering, who is going to answer it, and where the money will be held. Research targets, not roadmaps.'
               },
               {
-                q: 'What fees are involved?',
-                a: 'Zoo Foundation takes a 5% platform fee from funds raised to support infrastructure and shared services.'
+                q: 'How long does it take?',
+                a: 'We read every submission and reply. We do not publish a turnaround time we would have to keep, and there is no committee vote to wait on.'
               }
             ].map((faq, i) => (
               <div key={i} className="bg-white/3 border border-white/10 rounded-xl p-6">

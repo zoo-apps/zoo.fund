@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { FundingCard } from '@/components/funding-card'
-import { OnChainMetrics } from '@/components/on-chain-metrics'
 import { getDAO, daos } from '@/lib/daos'
 import {
   MarketHypothesisSection,
@@ -127,9 +126,6 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                 label: 'Overview',
                 content: (
                   <div className="space-y-12">
-                    {/* On-Chain Metrics */}
-                    <OnChainMetrics dao={dao} />
-
                     {/* Market Hypothesis */}
                     {dao.marketHypothesis && (
                       <div>
