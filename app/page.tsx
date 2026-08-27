@@ -6,17 +6,19 @@ import { FeaturedProjectsSection } from '@/components/featured-projects'
 import { ProjectCardProps } from '@/components/project-card'
 
 export default function Home() {
-  // Calculate total statistics
-  const totalRaised = daos.reduce((sum, dao) => {
-    const amount = parseFloat(dao.raised.replace(/[$,]/g, ''))
-    return sum + amount
-  }, 0)
+  // Counted from the DAOs themselves rather than typed here, so a figure cannot
+  // drift from the thing it describes.
+  //
+  // There is no total-raised figure. A dollar amount is a claim a reader expects
+  // to check against a treasury, and no DAO here publishes an address yet — so
+  // the number would have to be taken on trust, which is the opposite of what an
+  // on-chain raise is for. It returns when the treasuries do.
+  const sum = (f: (d: (typeof daos)[number]) => number) => daos.reduce((n, d) => n + f(d), 0)
 
   const stats = [
-    { value: `$${(totalRaised / 1000).toFixed(1)}M+`, label: 'Total Funding Raised' },
-    { value: '8', label: 'Conservation DAOs' },
-    { value: '2,500+', label: 'Community Members' },
-    { value: '15+', label: 'Active Projects' },
+    { value: String(daos.length), label: 'Research DAOs' },
+    { value: sum((d) => d.proposals).toLocaleString(), label: 'Proposals' },
+    { value: sum((d) => d.members).toLocaleString(), label: 'Members' },
   ]
 
   // Transform DAOs into ProjectCardProps for featured section
@@ -67,14 +69,16 @@ export default function Home() {
         <section className="section-padding-lg border-b border-white/10">
           <div className="container">
             <h1 className="text-responsive-h1 font-black mb-4 sm:mb-6 text-center tracking-tight animate-fadeIn">
-              Zoo Fund
+              Research that raises like a startup
             </h1>
             <p className="text-responsive-body text-white/80 text-center max-w-3xl mx-auto mb-8 sm:mb-12 animate-fadeIn delay-100">
-              Decentralized funding for wildlife conservation through specialized DAOs
+              A grant cycle takes a year and answers to a committee. A DAO names the
+              question it wants answered, opens a raise for it, and publishes what it
+              finds. Zoo is where that raise happens.
             </p>
 
             {/* Statistics Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 animate-fadeIn delay-200">
+            <div className="grid grid-cols-3 gap-6 mb-16 animate-fadeIn delay-200">
               {stats.map((stat, index) => (
                 <div
                   key={index}

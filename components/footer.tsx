@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container">
         {/* DAO Links Section */}
         <div className="text-center mb-12 pb-12 border-b border-white/10">
-          <h3 className="text-2xl font-bold mb-6 animate-fadeIn">Conservation DAOs</h3>
+          <h3 className="text-2xl font-bold mb-6 animate-fadeIn">Research DAOs</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             <Link href="/ocean" className="group bg-white/3 border border-white/10 rounded-xl p-4 hover:border-[#667eea]/50 hover:bg-white/5 hover:scale-105 transition-all duration-300">
               <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">🧬</div>

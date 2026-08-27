@@ -58,16 +58,24 @@ export function TreasuryView({
               ${totalValue.toLocaleString()}
             </p>
           </div>
+          {/* An explorer link is a promise that the reader can go and check.
+              Only an address keeps it: a name renders as nonsense through the
+              truncation and resolves to nothing on a Base address page. Where
+              there is no address yet, that is what it says. */}
           <div className="text-right">
             <p className="text-sm text-white/60 mb-1">Multisig Address</p>
-            <a
-              href={`https://basescan.org/address/${multisigAddress}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-mono text-[#667eea] hover:text-[#764ba2] transition-colors"
-            >
-              {multisigAddress.slice(0, 6)}...{multisigAddress.slice(-4)}
-            </a>
+            {/^0x[a-fA-F0-9]{40}$/.test(multisigAddress) ? (
+              <a
+                href={`https://basescan.org/address/${multisigAddress}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-mono text-[#667eea] hover:text-[#764ba2] transition-colors"
+              >
+                {multisigAddress.slice(0, 6)}...{multisigAddress.slice(-4)}
+              </a>
+            ) : (
+              <p className="text-sm text-white/40">not published yet</p>
+            )}
           </div>
         </div>
 

@@ -88,7 +88,10 @@ export const daos: DAO[] = [
     goal: '$500,000',
     proposals: 18,
     members: 342,
-    multisig: '0x742d35Cc6634C0532925a3b844Bc9e7595f08f3a',
+    // Was a sample address copied out of web3 documentation. It belongs to
+    // someone else and passes every format check, so it read as a real treasury
+    // and linked to a stranger's wallet. Empty until there is one.
+    multisig: '',
 
     marketHypothesis: 'Ocean biodiversity is declining at an unprecedented rate, with an estimated 10-15% of marine species facing extinction within the next century. Traditional conservation methods are insufficient to catalog and protect the vast diversity of ocean life. Environmental DNA (eDNA) sequencing offers a revolutionary approach to rapidly identify, monitor, and protect marine species at scale. By building the world\'s most comprehensive marine genetic database, OceanDAO enables data-driven conservation strategies, sustainable fishing practices, and early detection of ecosystem threats. The market for marine conservation technology is projected to reach $2.8 billion by 2030, driven by increasing regulatory requirements, climate change impacts, and growing awareness of ocean health\'s critical role in planetary stability.',
 

@@ -7,24 +7,24 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zoo.fund'),
-  title: 'Zoo Fund - Conservation DAOs',
-  description: 'Decentralized funding for wildlife conservation through specialized DAOs',
+  title: 'Zoo Fund',
+  description: 'Research DAOs raise on-chain for one named question, and publish what they find.',
   // Without these the site shares as a naked URL — no name, no description,
   // no card — which is the state it was in. Next emits og: tags only for what
   // is declared here; a title and description alone do not produce them.
   openGraph: {
     type: 'website',
     siteName: 'Zoo Fund',
-    title: 'Zoo Fund - Conservation DAOs',
-    description: 'Decentralized funding for wildlife conservation through specialized DAOs',
+    title: 'Zoo Fund',
+    description: 'Research DAOs raise on-chain for one named question, and publish what they find.',
     url: 'https://zoo.fund',
     images: [{ url: '/logos/logo-512.png', width: 512, height: 512, alt: 'Zoo' }],
   },
   twitter: {
     card: 'summary',
     site: '@zoo_labs',
-    title: 'Zoo Fund - Conservation DAOs',
-    description: 'Decentralized funding for wildlife conservation through specialized DAOs',
+    title: 'Zoo Fund',
+    description: 'Research DAOs raise on-chain for one named question, and publish what they find.',
     images: ['/logos/logo-512.png'],
   },
   icons: {

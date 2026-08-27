@@ -3,8 +3,8 @@ import { Footer } from '@/components/footer'
 import { DAOOnboardingPage } from '@/components/dao-onboarding'
 
 export const metadata = {
-  title: 'Launch Your DAO | Zoo Fund',
-  description: 'Start your own conservation DAO on Zoo Fund. Self-service onboarding for decentralized conservation funding.',
+  title: 'Open a raise | Zoo Fund',
+  description: 'Name the question your DAO exists to answer, and open a raise for it.',
 }
 
 export default function LaunchPage() {
