@@ -12,51 +12,6 @@ export default function AIPage() {
       category: "Foundation Models",
       status: "Active"
     },
-    {
-      title: "HLLM",
-      description: "Hamiltonian Large Language Models with training-free optimization",
-      emoji: "⚛️",
-      link: "https://papers.zoo.ngo/hllm",
-      category: "Research",
-      status: "Research"
-    },
-    {
-      title: "Conservation AI",
-      description: "Computer vision models for species identification and tracking",
-      emoji: "👁️",
-      link: "https://papers.zoo.ngo/conservation-ai",
-      category: "Applied AI",
-      status: "Active"
-    },
-    {
-      title: "Marine DNA Analysis",
-      description: "AI-powered genetic sequencing for marine biodiversity",
-      emoji: "🧬",
-      link: "https://papers.zoo.ngo/marine-dna",
-      category: "Bioinformatics",
-      status: "Active"
-    }
-  ]
-
-  const researchPapers = [
-    {
-      title: "Training-Free GRPO for Wildlife Conservation Models",
-      authors: "Zoo Labs Research Team",
-      year: 2025,
-      link: "https://papers.zoo.ngo/grpo-wildlife"
-    },
-    {
-      title: "Edge AI for Real-Time Species Detection",
-      authors: "ZenDAO Contributors",
-      year: 2025,
-      link: "https://papers.zoo.ngo/edge-species"
-    },
-    {
-      title: "Decentralized Model Governance in Conservation DAOs",
-      authors: "Zoo Labs Foundation",
-      year: 2024,
-      link: "https://papers.zoo.ngo/dao-governance"
-    }
   ]
 
   return (
@@ -132,46 +87,6 @@ export default function AIPage() {
           </div>
         </section>
 
-        {/* Latest Research */}
-        <section className="section-padding border-b border-white/10">
-          <div className="container">
-            <h2 className="text-responsive-h2 font-bold mb-8 text-center">
-              Latest Research
-            </h2>
-            <div className="max-w-4xl mx-auto space-y-4">
-              {researchPapers.map((paper, index) => (
-                <a
-                  key={index}
-                  href={paper.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-white/3 border border-white/10 rounded-lg p-6 hover:bg-white/5 hover:border-[#667eea]/30 transition-all"
-                >
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-2 hover:text-[#667eea] transition-colors">
-                        {paper.title}
-                      </h3>
-                      <p className="text-sm text-white/60">
-                        {paper.authors} • {paper.year}
-                      </p>
-                    </div>
-                    <span className="text-[#667eea] ml-4">→</span>
-                  </div>
-                </a>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <Link
-                href="https://papers.zoo.ngo"
-                target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#667eea]/10 border border-[#667eea]/30 rounded-lg text-[#667eea] hover:bg-[#667eea]/20 transition-all"
-              >
-                View All Papers at papers.zoo.ngo →
-              </Link>
-            </div>
-          </div>
-        </section>
 
         {/* Technology Stack */}
         <section className="section-padding border-b border-white/10">

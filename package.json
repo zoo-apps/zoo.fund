@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start -p 3005",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "cites": "node bin/cites.mjs",
+    "verify": "pnpm type-check && pnpm build && pnpm cites"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
@@ -54,7 +56,13 @@
   "directories": {
     "test": "tests"
   },
-  "keywords": ["conservation", "dao", "nonprofit", "501c3", "wildlife"],
+  "keywords": [
+    "conservation",
+    "dao",
+    "nonprofit",
+    "501c3",
+    "wildlife"
+  ],
   "author": "Zoo Labs Foundation Inc",
   "license": "MIT"
 }

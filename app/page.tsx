@@ -58,29 +58,6 @@ export default function Home() {
     featured: true,
   }))
 
-  const featuredNews = [
-    {
-      title: 'ZenLM AI Powers New Conservation Tools',
-      description: 'ZenDAO announces breakthrough in edge AI for wildlife monitoring',
-      date: '2025-01-15',
-      link: 'https://zenlm.org/blog/conservation-ai',
-      dao: '🧘 ZenDAO',
-    },
-    {
-      title: 'OceanDAO Publishes Groundbreaking DNA Study',
-      description: 'New research reveals 300+ undiscovered marine species',
-      date: '2025-01-10',
-      link: 'https://papers.zoo.ngo/ocean-dna-2025',
-      dao: '🧬 OceanDAO',
-    },
-    {
-      title: 'Tiger Conservation Milestone Reached',
-      description: 'TigerDAO reports 15% increase in wild tiger populations',
-      date: '2025-01-05',
-      link: 'https://papers.zoo.ngo/tiger-conservation',
-      dao: '🐅 TigerDAO',
-    },
-  ]
 
   return (
     <>
@@ -118,53 +95,6 @@ export default function Home() {
         {/* Featured Conservation Projects */}
         <FeaturedProjectsSection projects={featuredProjects} />
 
-        {/* Latest Research & News */}
-        <section className="section-padding border-b border-white/10">
-          <div className="container">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-              <div>
-                <h2 className="text-responsive-h2 font-bold mb-2">Latest Research & News</h2>
-                <p className="text-white/60 text-sm sm:text-base">
-                  Breakthrough discoveries and updates from our conservation DAOs
-                </p>
-              </div>
-              <Link
-                href="https://papers.zoo.ngo"
-                target="_blank"
-                className="px-6 py-3 bg-[#667eea]/10 border border-[#667eea]/30 rounded-lg text-[#667eea] hover:bg-[#667eea]/20 transition-all"
-              >
-                View All Research →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {featuredNews.map((news, index) => (
-                <a
-                  key={index}
-                  href={news.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-2xl p-6 hover:border-[#667eea]/50 hover:scale-105 transition-all duration-300"
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs px-2 py-1 bg-[#667eea]/20 text-[#667eea] rounded-full">
-                      {news.dao}
-                    </span>
-                    <span className="text-xs text-white/40">{news.date}</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-[#667eea] transition-colors">
-                    {news.title}
-                  </h3>
-                  <p className="text-sm text-white/70 mb-4">{news.description}</p>
-                  <div className="flex items-center gap-2 text-sm text-[#667eea]">
-                    <span>Read more</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Partners Section */}
         <section className="section-padding border-b border-white/10">

@@ -192,11 +192,6 @@ export const daos: DAO[] = [
         type: 'paper'
       },
       {
-        title: 'The Census of Marine Life: Making Ocean Life Count',
-        url: 'https://www.plos.org/census-marine-life/',
-        type: 'report'
-      },
-      {
         title: 'How eDNA is revolutionizing marine conservation',
         url: 'https://www.youtube.com/watch?v=ocean-edna',
         type: 'video'
@@ -209,57 +204,9 @@ export const daos: DAO[] = [
     ],
 
     news: [
-      {
-        title: 'OceanDAO Publishes Groundbreaking DNA Study',
-        description: 'New research reveals 300+ undiscovered marine species through environmental DNA sampling in the Pacific Ocean. This breakthrough demonstrates the power of eDNA technology in cataloging marine biodiversity.',
-        date: '2025-01-10',
-        url: 'https://papers.zoo.ngo/ocean-dna-2025',
-        type: 'research'
-      },
-      {
-        title: 'Coral Reef Genomics Initiative Launch',
-        description: 'OceanDAO announces major research initiative to study coral stress responses and climate resilience. Focus on identifying heat-tolerant coral strains for restoration programs.',
-        date: '2024-12-15',
-        url: 'https://papers.zoo.ngo/coral-genomics-2024',
-        type: 'news'
-      },
-      {
-        title: '50 Automated Sampling Stations Deployed',
-        description: 'Milestone achievement: OceanDAO has successfully deployed 50 autonomous eDNA sampling stations across key marine ecosystems worldwide, doubling our monitoring capacity.',
-        date: '2024-11-20',
-        url: 'https://papers.zoo.ngo/sampling-network-expansion',
-        type: 'milestone'
-      }
     ],
 
     researchArtifacts: [
-      {
-        title: 'Pacific Ocean eDNA Sequence Database',
-        description: 'Complete genomic sequences from 300+ newly cataloged marine species. Includes raw FASTA files, annotated genomes, and species identification models.',
-        date: '2025-01-10',
-        zipUrl: 'https://zips.zoo.ngo/ocean-dao/pacific-edna-2025.zip',
-        size: '2.4 GB',
-        format: 'DNA sequences (FASTA), Annotations (GFF3), ML models (PyTorch)',
-        doi: '10.5281/zenodo.ocean.2025.001'
-      },
-      {
-        title: 'Coral Reef Genetic Diversity Dataset',
-        description: 'Comprehensive genetic analysis of coral species across 15 reef systems. Includes stress response markers and climate resilience indicators.',
-        date: '2024-12-15',
-        zipUrl: 'https://zips.zoo.ngo/ocean-dao/coral-genomics-2024.zip',
-        size: '1.8 GB',
-        format: 'DNA sequences (FASTA), SNP data (VCF), Analysis scripts (R/Python)',
-        doi: '10.5281/zenodo.ocean.2024.012'
-      },
-      {
-        title: 'Marine Biodiversity Sampling Network Data',
-        description: 'Raw data from 50 autonomous sampling stations covering 2 years of continuous monitoring. Includes environmental metadata and species presence matrices.',
-        date: '2024-11-20',
-        zipUrl: 'https://zips.zoo.ngo/ocean-dao/sampling-network-2024.zip',
-        size: '850 MB',
-        format: 'Time-series data (CSV), Environmental metadata (JSON), GIS files (GeoJSON)',
-        doi: '10.5281/zenodo.ocean.2024.010'
-      }
     ]
   },
   {
@@ -380,20 +327,10 @@ export const daos: DAO[] = [
         type: 'paper'
       },
       {
-        title: 'Shark Stewards: 20 Years of Conservation Impact',
-        url: 'https://sharkstewards.org/impact-report',
-        type: 'report'
-      },
-      {
         title: 'Why Sharks Matter: The Apex Predator Perspective',
         url: 'https://www.youtube.com/watch?v=shark-conservation',
         type: 'video'
       },
-      {
-        title: 'Global Shark Finning Trade Analysis',
-        url: 'https://www.traffic.org/shark-fin-trade/',
-        type: 'article'
-      }
     ]
   },
   {
@@ -514,20 +451,10 @@ export const daos: DAO[] = [
         type: 'paper'
       },
       {
-        title: 'Frontiers North: 30 Years of Arctic Conservation',
-        url: 'https://frontiersnorth.com/conservation-report',
-        type: 'report'
-      },
-      {
         title: 'Churchill Beluga Whale Migration',
         url: 'https://www.youtube.com/watch?v=beluga-churchill',
         type: 'video'
       },
-      {
-        title: 'Indigenous-Led Arctic Conservation Success Stories',
-        url: 'https://www.arcticconservation.org/indigenous-leadership',
-        type: 'article'
-      }
     ]
   },
   {
@@ -657,11 +584,6 @@ export const daos: DAO[] = [
         url: 'https://www.youtube.com/watch?v=kauai-coral',
         type: 'video'
       },
-      {
-        title: 'Super Corals: Engineering Reef Resilience',
-        url: 'https://www.scientificamerican.com/super-corals/',
-        type: 'article'
-      }
     ]
   },
   {
@@ -777,11 +699,6 @@ export const daos: DAO[] = [
 
     resources: [
       {
-        title: 'The State of the Tiger: Status and Conservation',
-        url: 'https://www.panthera.org/tiger-status-report',
-        type: 'report'
-      },
-      {
         title: 'Captive Big Cats in the United States',
         url: 'https://www.worldwildlife.org/publications/captive-big-cats',
         type: 'paper'
@@ -791,11 +708,6 @@ export const daos: DAO[] = [
         url: 'https://www.youtube.com/watch?v=india-tiger-success',
         type: 'video'
       },
-      {
-        title: 'Big Cat Public Safety Act: What You Need to Know',
-        url: 'https://www.humanesociety.org/big-cat-public-safety-act',
-        type: 'article'
-      }
     ]
   },
   {
@@ -914,11 +826,6 @@ export const daos: DAO[] = [
         title: 'AI for Conservation: A Comprehensive Review',
         url: 'https://www.nature.com/articles/ai-conservation-2024',
         type: 'paper'
-      },
-      {
-        title: 'NSF Environmental AI Research Program',
-        url: 'https://www.nsf.gov/ai-environment',
-        type: 'report'
       },
       {
         title: 'Machine Learning for Wildlife Monitoring',
@@ -1045,16 +952,6 @@ export const daos: DAO[] = [
 
     resources: [
       {
-        title: 'Decentralized Conservation Funding: A New Paradigm',
-        url: 'https://conservation-dao.org/decentralized-funding-white-paper',
-        type: 'paper'
-      },
-      {
-        title: 'Zoo Labs Foundation Impact Report 2024',
-        url: 'https://zoo.ngo/impact-2024',
-        type: 'report'
-      },
-      {
         title: 'How DAOs Are Revolutionizing Conservation',
         url: 'https://www.youtube.com/watch?v=conservation-daos',
         type: 'video'
@@ -1179,79 +1076,16 @@ export const daos: DAO[] = [
 
     resources: [
       {
-        title: 'Edge AI for Wildlife Conservation',
-        url: 'https://arxiv.org/conservation-edge-ai',
-        type: 'paper'
-      },
-      {
-        title: 'ZenLM Model Architecture and Training',
-        url: 'https://github.com/zoo-labs/zenlm',
-        type: 'report'
-      },
-      {
         title: 'Field Deployment: ZenLM in African Wildlife Reserves',
         url: 'https://www.youtube.com/watch?v=zenlm-africa',
         type: 'video'
       },
-      {
-        title: 'Small Language Models: The Future of Edge AI',
-        url: 'https://www.technologyreview.com/small-language-models/',
-        type: 'article'
-      }
     ],
 
     news: [
-      {
-        title: 'ZenLM AI Powers New Conservation Tools',
-        description: 'ZenDAO announces breakthrough in edge AI for wildlife monitoring. New ZenLM 1B model achieves 94% accuracy in species identification while running entirely on smartphones without internet connectivity.',
-        date: '2025-01-15',
-        url: 'https://zenlm.org/blog/conservation-ai',
-        type: 'research'
-      },
-      {
-        title: 'Field Deployment Milestone: 10 Conservation Partners',
-        description: 'ZenLM edge AI models now deployed with 10 conservation organizations across Africa, Asia, and Latin America. Rangers report 70% faster species identification in the field.',
-        date: '2024-12-20',
-        url: 'https://zenlm.org/blog/field-deployment-2024',
-        type: 'milestone'
-      },
-      {
-        title: 'Multimodal AI Update: Vision + Audio Integration',
-        description: 'ZenLM 1B now supports unified image and audio understanding for field identification. Single model handles photos, sounds, and text descriptions without specialized expertise.',
-        date: '2024-11-10',
-        url: 'https://zenlm.org/blog/multimodal-update',
-        type: 'update'
-      }
     ],
 
     researchArtifacts: [
-      {
-        title: 'ZenLM 1B Model Weights & Training Data',
-        description: 'Complete model weights for ZenLM 1B multimodal conservation AI. Includes training datasets (wildlife images, audio recordings, field reports) and fine-tuning scripts.',
-        date: '2025-01-15',
-        zipUrl: 'https://zips.zoo.ngo/zen-dao/zenlm-1b-2025.zip',
-        size: '4.2 GB',
-        format: 'Model weights (PyTorch/ONNX), Training data (images/audio), Scripts (Python)',
-        doi: '10.5281/zenodo.zenlm.2025.001'
-      },
-      {
-        title: 'Species Identification Benchmark Dataset',
-        description: 'Curated dataset of 100,000+ labeled wildlife images and audio recordings covering 1,000 species. Includes field validation data from 10 conservation sites.',
-        date: '2024-12-20',
-        zipUrl: 'https://zips.zoo.ngo/zen-dao/species-benchmark-2024.zip',
-        size: '3.8 GB',
-        format: 'Images (JPEG), Audio (WAV/MP3), Labels (JSON), Metadata (CSV)',
-        doi: '10.5281/zenodo.zenlm.2024.005'
-      },
-      {
-        title: 'Edge AI Deployment Package',
-        description: 'Optimized models and deployment tools for running ZenLM on mobile devices. Includes quantized models, inference code, and field deployment guide.',
-        date: '2024-11-10',
-        zipUrl: 'https://zips.zoo.ngo/zen-dao/edge-deployment-2024.zip',
-        size: '680 MB',
-        format: 'Quantized models (ONNX/TFLite), Mobile apps (APK/IPA), Docs (PDF)',
-        doi: '10.5281/zenodo.zenlm.2024.003'
-      }
     ]
   }
 ]
