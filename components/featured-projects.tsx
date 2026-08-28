@@ -18,17 +18,31 @@ export function FeaturedProjects({
 }: FeaturedProjectsProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
+  // Rotation stopped only while a mouse sat on it, which is no help to anyone
+  // navigating by keyboard or touch — and content that moves on its own for
+  // longer than five seconds needs a way to stop it that everyone can reach.
+  const [paused, setPaused] = useState(false)
+
+  // Someone who has asked their system for less motion has asked for this too.
+  useEffect(() => {
+    const quiet = window.matchMedia?.('(prefers-reduced-motion: reduce)')
+    if (!quiet) return
+    const apply = () => setPaused(quiet.matches)
+    apply()
+    quiet.addEventListener?.('change', apply)
+    return () => quiet.removeEventListener?.('change', apply)
+  }, [])
 
   // Auto-rotate carousel
   useEffect(() => {
-    if (!autoRotate || isHovering || projects.length <= 1) return
+    if (!autoRotate || isHovering || paused || projects.length <= 1) return
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % projects.length)
     }, rotateInterval)
 
     return () => clearInterval(interval)
-  }, [autoRotate, isHovering, projects.length, rotateInterval])
+  }, [autoRotate, isHovering, paused, projects.length, rotateInterval])
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
@@ -93,6 +107,14 @@ export function FeaturedProjects({
         {/* Navigation Arrows */}
         {projects.length > 1 && (
           <>
+            <button
+              onClick={() => setPaused((p) => !p)}
+              aria-pressed={paused}
+              className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white/70"
+            >
+              {paused ? 'Play' : 'Pause'}
+            </button>
+
             <button
               onClick={goToPrevious}
               className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/60 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-black/80 hover:scale-110 transition-all z-10"

@@ -23,10 +23,18 @@ export function DAOTabs({ tabs, defaultTab }: DAOTabsProps) {
       {/* Tab Navigation */}
       <div className="border-b border-white/10 mb-8">
         <div className="container">
-          <div className="flex gap-8 overflow-x-auto scrollbar-hide">
+          {/* Which tab is open was signalled by colour and an underline alone.
+              A screen reader announced five identical buttons and no current
+              one, so aria-selected carries the state and role ties each tab to
+              the panel it opens. */}
+          <div role="tablist" aria-label="Sections" className="flex gap-8 overflow-x-auto scrollbar-hide">
             {tabs.map(tab => (
               <button
                 key={tab.id}
+                role="tab"
+                id={`tab-${tab.id}`}
+                aria-selected={activeTab === tab.id}
+                aria-controls={`panel-${tab.id}`}
                 onClick={() => setActiveTab(tab.id)}
                 className={`pb-4 px-2 text-lg font-semibold whitespace-nowrap transition-all ${
                   activeTab === tab.id
@@ -42,7 +50,15 @@ export function DAOTabs({ tabs, defaultTab }: DAOTabsProps) {
       </div>
 
       {/* Tab Content */}
-      <div className="container">{activeTabContent}</div>
+      <div
+        role="tabpanel"
+        id={`panel-${activeTab}`}
+        aria-labelledby={`tab-${activeTab}`}
+        tabIndex={0}
+        className="container"
+      >
+        {activeTabContent}
+      </div>
     </div>
   )
 }
