@@ -135,23 +135,6 @@ export const daos: DAO[] = [
       ]
     },
 
-    team: [
-      {
-        name: 'Dr. Sylvia Earle',
-        role: 'Scientific Advisory Board',
-        bio: 'Legendary marine biologist and National Geographic Explorer-in-Residence. Pioneer of deep ocean exploration with over 7,000 hours underwater.'
-      },
-      {
-        name: 'Dr. Erika Woolsey',
-        role: 'Marine Conservation Lead',
-        bio: 'CEO of The Hydrous, marine biologist specializing in coral reef ecosystems and immersive ocean storytelling through VR/AR technology.'
-      },
-      {
-        name: 'Dr. Jesse Ausubel',
-        role: 'Biodiversity Research Advisor',
-        bio: 'Director of the Program for the Human Environment at Rockefeller University. Led the Census of Marine Life, a 10-year global initiative.'
-      }
-    ],
 
     roadmap: [
       {
@@ -270,23 +253,6 @@ export const daos: DAO[] = [
       ]
     },
 
-    team: [
-      {
-        name: 'David McGuire',
-        role: 'Director, Shark Stewards',
-        bio: 'Marine biologist and shark conservationist. Founded Shark Stewards and led campaigns resulting in California shark fin ban and federal protections for multiple shark species.'
-      },
-      {
-        name: 'Dr. Barbara Block',
-        role: 'Scientific Advisor',
-        bio: 'Stanford marine biologist specializing in shark physiology and migration. Pioneer of electronic tagging technology that revolutionized understanding of shark behavior.'
-      },
-      {
-        name: 'Ocean Ramsey',
-        role: 'Conservation Ambassador',
-        bio: 'Marine biologist and shark advocate known for free-diving with great white sharks. Founder of One Ocean Diving, promoting shark conservation through education.'
-      }
-    ],
 
     roadmap: [
       {
@@ -394,23 +360,6 @@ export const daos: DAO[] = [
       ]
     },
 
-    team: [
-      {
-        name: 'Frontiers North Adventures',
-        role: 'Arctic Tourism Partner',
-        bio: 'Leading Arctic adventure company specializing in responsible wildlife tourism in Churchill, Manitoba. 30+ years experience with beluga whales and polar bear encounters.'
-      },
-      {
-        name: 'Dr. Valeria Vergara',
-        role: 'Beluga Research Advisor',
-        bio: 'Marine biologist specializing in beluga whale acoustics and communication. Leading expert on beluga vocalizations and their use of sound in Arctic environments.'
-      },
-      {
-        name: 'Indigenous Elders Council',
-        role: 'Traditional Knowledge Advisors',
-        bio: 'Representatives from Inuit and First Nations communities with generations of beluga stewardship. Guide culturally appropriate conservation approaches.'
-      }
-    ],
 
     roadmap: [
       {
@@ -518,23 +467,6 @@ export const daos: DAO[] = [
       ]
     },
 
-    team: [
-      {
-        name: 'Gregg Winston',
-        role: 'Conservation Director',
-        bio: 'Marine conservationist with 20+ years protecting Hawaiian reefs. Founder of Kauai reef restoration programs and advocate for community-based ocean stewardship.'
-      },
-      {
-        name: 'Dr. Ruth Gates (Honored)',
-        role: 'Scientific Inspiration',
-        bio: 'Late coral reef scientist who pioneered super coral research. Her vision of climate-resilient reefs continues to guide Hawaiian conservation efforts.'
-      },
-      {
-        name: 'Kumu Hula Council',
-        role: 'Cultural Advisors',
-        bio: 'Hawaiian cultural practitioners who maintain traditional ecological knowledge. Guide integration of ancient ahupuaʻa management with modern conservation.'
-      }
-    ],
 
     roadmap: [
       {
@@ -647,23 +579,6 @@ export const daos: DAO[] = [
       ]
     },
 
-    team: [
-      {
-        name: 'Big Cat Rescue Network',
-        role: 'Sanctuary Partners',
-        bio: 'Coalition of accredited big cat sanctuaries across North America. Provide lifetime care for rescued tigers, lions, and other exotic cats.'
-      },
-      {
-        name: 'Dr. Alan Rabinowitz (Honored)',
-        role: 'Conservation Inspiration',
-        bio: 'Late big cat conservationist who established critical tiger corridors in Asia. His vision of connected wild populations guides TigerDAO\'s habitat work.'
-      },
-      {
-        name: 'Wildlife Conservation Society',
-        role: 'Field Conservation Partner',
-        bio: 'Leading organization protecting wild tigers in India, Russia, and Southeast Asia through community-based conservation and anti-poaching efforts.'
-      }
-    ],
 
     roadmap: [
       {
@@ -718,10 +633,10 @@ export const daos: DAO[] = [
     name: 'ResearchDAO',
     symbol: 'RESEARCH',
     emoji: '🔬',
-    tagline: 'NSF grant research in AI and conservation',
-    description: 'ResearchDAO funds NSF grant research in AI and conservation technology, supporting Zoo\'s scientific initiatives to develop cutting-edge solutions for conservation challenges.',
+    tagline: 'Open AI research for conservation',
+    description: 'ResearchDAO funds open AI research in conservation technology, supporting Zoo\'s scientific initiatives.',
     mission: 'Develop cutting-edge AI solutions for conservation challenges',
-    partners: 'National Science Foundation, universities, and research institutions',
+    partners: 'Universities and research institutions',
     treasury: '$500,000',
     raised: '$500,000',
     goal: '$1,000,000',
@@ -729,7 +644,7 @@ export const daos: DAO[] = [
     members: 789,
     multisig: 'zoo.eth',
 
-    marketHypothesis: 'Conservation faces a data crisis: 80% of wildlife populations lack adequate monitoring, species identification requires expert knowledge scarce in the field, and conservation decisions often rely on outdated information. AI and machine learning offer transformative solutions—automated species recognition, real-time habitat monitoring, predictive modeling for poaching, and optimization of limited conservation resources. The AI for conservation market is nascent but growing rapidly, with $2.1 billion invested in environmental AI startups since 2020. However, most AI conservation tools remain in academic labs, not deployed at scale. ResearchDAO bridges this gap by funding practical AI research that solves real conservation problems, then open-sourcing the technology for global use. With NSF grants leveraging community contributions 3:1, ResearchDAO maximizes research impact while building a portfolio of AI tools that create lasting value for conservation and token holders.',
+    marketHypothesis: 'Conservation faces a data crisis: 80% of wildlife populations lack adequate monitoring, species identification requires expert knowledge scarce in the field, and conservation decisions often rely on outdated information. AI and machine learning offer transformative solutions—automated species recognition, real-time habitat monitoring, predictive modeling for poaching, and optimization of limited conservation resources. The AI for conservation market is nascent but growing rapidly, with $2.1 billion invested in environmental AI startups since 2020. However, most AI conservation tools remain in academic labs, not deployed at scale. ResearchDAO bridges this gap by funding practical AI research that solves real conservation problems, then open-sourcing the technology for global use. ResearchDAO funds practical AI research and open-sources what it produces.',
 
     researchAreas: [
       {
@@ -771,31 +686,8 @@ export const daos: DAO[] = [
       ]
     },
 
-    team: [
-      {
-        name: 'Dr. Fei-Fei Li',
-        role: 'AI Research Advisor',
-        bio: 'Stanford professor and pioneer of ImageNet. Co-director of Stanford Human-Centered AI Institute. Leading expert in computer vision applications for environmental monitoring.'
-      },
-      {
-        name: 'Dr. Grégoire Dubois',
-        role: 'Conservation Technology Lead',
-        bio: 'European Commission scientist specializing in AI for biodiversity. Developed machine learning models for habitat mapping and species distribution prediction.'
-      },
-      {
-        name: 'Dr. Tom Hart',
-        role: 'Field Applications Advisor',
-        bio: 'Penguin ecologist at Oxford University. Created Penguin Watch citizen science platform using AI to analyze millions of penguin images from remote cameras.'
-      }
-    ],
 
     roadmap: [
-      {
-        date: '2024 Q1',
-        title: 'NSF Grant Award',
-        status: 'completed',
-        description: 'Secured $350K NSF grant for AI-powered acoustic monitoring. Matched by DAO treasury for $700K total research budget.'
-      },
       {
         date: '2024 Q2',
         title: 'Wildlife Vision Foundation Model',
@@ -822,7 +714,7 @@ export const daos: DAO[] = [
       }
     ],
 
-    valueCaptureModel: 'ResearchDAO captures value through a hybrid open-source/commercial model. Core AI models and research are published openly, accelerating conservation science globally. However, enterprise deployment, support, and custom model training generate revenue shared with token holders. NSF and other grants provide 3:1 leverage on DAO contributions—every $100K from the DAO unlocks $300K in federal research funding. As conservation organizations, governments, and corporations adopt ResearchDAO AI tools, licensing fees and support contracts create sustainable revenue. Token holders benefit from both direct revenue sharing and the appreciation of conservation AI as critical infrastructure. The DAO also captures value through IP licensing for commercial applications (agriculture, forestry, environmental monitoring) while ensuring conservation use remains free. By funding the full research pipeline—from basic science to field deployment—ResearchDAO builds a portfolio of AI tools that compound in value as adoption scales.',
+    valueCaptureModel: 'ResearchDAO captures value through a hybrid open-source/commercial model. Core AI models and research are published openly, accelerating conservation science globally. However, enterprise deployment, support, and custom model training generate revenue shared with token holders. As conservation organizations, governments, and corporations adopt ResearchDAO AI tools, licensing fees and support contracts create sustainable revenue. Token holders benefit from both direct revenue sharing and the appreciation of conservation AI as critical infrastructure. The DAO also captures value through IP licensing for commercial applications (agriculture, forestry, environmental monitoring) while ensuring conservation use remains free. By funding the full research pipeline—from basic science to field deployment—ResearchDAO builds a portfolio of AI tools that compound in value as adoption scales.',
 
     resources: [
       {
@@ -900,23 +792,6 @@ export const daos: DAO[] = [
       ]
     },
 
-    team: [
-      {
-        name: 'Zoo Labs Foundation',
-        role: 'Core Team',
-        bio: 'Techstars \'17 alumni building decentralized infrastructure for conservation. Combines blockchain expertise with deep conservation partnerships.'
-      },
-      {
-        name: 'Conservation Partners Network',
-        role: 'Field Partners',
-        bio: 'Coalition of 20+ conservation organizations worldwide providing on-the-ground expertise and project implementation across marine, terrestrial, and Arctic ecosystems.'
-      },
-      {
-        name: 'DAO Governance Council',
-        role: 'Community Leaders',
-        bio: 'Elected representatives from token holder community. Guide strategic direction, evaluate funding proposals, and ensure alignment with conservation mission.'
-      }
-    ],
 
     roadmap: [
       {
@@ -1024,23 +899,6 @@ export const daos: DAO[] = [
       ]
     },
 
-    team: [
-      {
-        name: 'Hanzo AI Research',
-        role: 'AI Development Partner',
-        bio: 'Frontier AI company building foundational models. Provides infrastructure, training expertise, and model optimization for ZenLM conservation models.'
-      },
-      {
-        name: 'Dr. Sara Beery',
-        role: 'Conservation AI Advisor',
-        bio: 'MIT computer scientist specializing in machine learning for wildlife monitoring. Pioneer of camera trap image analysis and citizen science AI integration.'
-      },
-      {
-        name: 'Wildlife Conservation Network',
-        role: 'Field Testing Partner',
-        bio: 'Global network of conservationists testing ZenLM in real-world conditions. Provide feedback, edge cases, and deployment insights from 30+ countries.'
-      }
-    ],
 
     roadmap: [
       {

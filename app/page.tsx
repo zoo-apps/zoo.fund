@@ -108,13 +108,17 @@ export default function Home() {
               Working together with leading conservation organizations, research institutions, and technology partners
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {/* Naming an organisation here asserts that it works with us. NSF
+                  is gone: the grant it was cited for was invented, and the page
+                  cited for it 404s. The NVIDIA mark was hotlinked from a
+                  third-party logo CDN — an unlicensed image and an external
+                  dependency — so it renders as a name like the rest. */}
               {[
                 { name: 'Shark Stewards', url: 'https://sharkstewards.org' },
                 { name: 'Frontiers North', url: 'https://frontiersnorth.com' },
-                { name: 'NSF', url: 'https://nsf.gov' },
                 { name: 'Hanzo AI', url: 'https://hanzo.ai' },
                 { name: 'Lux Network', url: 'https://lux.network' },
-                { name: 'NVIDIA Inception', url: 'https://www.nvidia.com/en-us/startups/', logo: 'https://www.logo.wine/a/logo/Nvidia/Nvidia-Light-Horizontal-Dark-Background-Logo.wine.svg' },
+                { name: 'NVIDIA Inception', url: 'https://www.nvidia.com/en-us/startups/' },
               ].map((partner, index) => (
                 <a
                   key={index}
@@ -123,17 +127,9 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="bg-white/5 border border-white/10 rounded-xl p-6 flex items-center justify-center hover:bg-white/10 hover:border-[#667eea]/50 transition-all duration-300 group"
                 >
-                  {partner.logo ? (
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="h-8 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
-                    />
-                  ) : (
-                    <span className="text-sm text-white/70 group-hover:text-white transition-colors">
+                  <span className="text-sm text-white/70 group-hover:text-white transition-colors">
                       {partner.name}
                     </span>
-                  )}
                 </a>
               ))}
             </div>

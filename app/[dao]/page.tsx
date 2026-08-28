@@ -15,9 +15,6 @@ import {
   ResearchArtifactsSection,
 } from '@/components/dao-sections'
 import { DAOTabs } from '@/components/dao-tabs'
-import { ProposalsList } from '@/components/proposals-list'
-import { TreasuryView } from '@/components/treasury-view'
-import { daoProposals, daoAssets, daoTransactions } from '@/lib/dao-governance-data'
 
 export function generateStaticParams() {
   return daos.map((dao) => ({
@@ -58,14 +55,6 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
   if (!dao) {
     notFound()
   }
-
-  // Get governance data for this DAO
-  const proposals = daoProposals[dao.id] || []
-  const assets = daoAssets[dao.id] || []
-  const transactions = daoTransactions[dao.id] || []
-
-  // Calculate active proposals count
-  const activeProposalsCount = proposals.filter(p => p.status === 'active').length
 
   return (
     <>
@@ -127,9 +116,6 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
               <div className="bg-white/3 border border-white/10 rounded-xl p-6">
                 <h4 className="text-lg font-semibold mb-2">🗳️ Proposals</h4>
                 <p className="text-2xl font-bold text-[#667eea]">{dao.proposals}</p>
-                <p className="text-xs text-white/60 mt-2">
-                  {activeProposalsCount} Active
-                </p>
               </div>
 
               <div className="bg-white/3 border border-white/10 rounded-xl p-6">
@@ -191,46 +177,6 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                         </div>
                       </div>
                     )}
-                  </div>
-                ),
-              },
-              {
-                id: 'proposals',
-                label: `Proposals (${proposals.length})`,
-                content: (
-                  <div>
-                    <div className="flex justify-between items-center mb-8">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-2">Governance Proposals</h3>
-                        <p className="text-white/60">
-                          Vote on proposals and help shape the future of {dao.name}
-                        </p>
-                      </div>
-                      <button className="px-6 py-3 bg-[#667eea] hover:bg-[#764ba2] rounded-lg font-semibold transition-all">
-                        Create Proposal
-                      </button>
-                    </div>
-                    <ProposalsList daoId={dao.id} proposals={proposals} />
-                  </div>
-                ),
-              },
-              {
-                id: 'treasury',
-                label: 'Treasury',
-                content: (
-                  <div>
-                    <div className="mb-8">
-                      <h3 className="text-2xl font-bold mb-2">DAO Treasury</h3>
-                      <p className="text-white/60">
-                        View assets, transactions, and financial activity
-                      </p>
-                    </div>
-                    <TreasuryView
-                      daoId={dao.id}
-                      assets={assets}
-                      transactions={transactions}
-                      multisigAddress={dao.multisig}
-                    />
                   </div>
                 ),
               },
