@@ -39,18 +39,23 @@ const marketCells = [
   { value: '$1.2T', label: 'Private Credit', gradient: 'from-lime-300 via-emerald-300 to-cyan-300' },
   { value: '$134B', label: 'Real Estate', gradient: 'from-emerald-200 via-teal-200 to-cyan-200' },
   { value: '$159B', label: 'Infrastructure', gradient: 'from-fuchsia-400 via-pink-400 to-rose-400' },
-  { value: '$5.38T', label: 'NVIDIA', sub: '(publicly traded)', gradient: 'from-zinc-800 via-zinc-900 to-black', dark: true },
+  { value: '$5.38T', label: 'NVIDIA', sub: '(publicly traded, Jul 2026)', gradient: 'from-zinc-800 via-zinc-900 to-black', dark: true },
 ]
 
 // ---------------------------------------------------------------------------
 // AI-native private companies (Frame 21)
 // ---------------------------------------------------------------------------
+// Valuations are omitted deliberately. The five that were here — 1.75 Trillion,
+// 852 Billion, 1.2 Trillion, 134 Billion, 159 Billion — are the same five
+// figures in the same order as the asset-class grid above, relabelled with
+// company names. They are not what any of these companies is worth, and a
+// private valuation with no date and no round behind it is not a fact anyway.
 const companies = [
-  { name: 'SpaceX', valuation: '1.75 Trillion' },
-  { name: 'OpenAI', valuation: '852 Billion' },
-  { name: 'Anthropic', valuation: '1.2 Trillion' },
-  { name: 'Databricks', valuation: '134 Billion' },
-  { name: 'Stripe', valuation: '159 Billion' },
+  { name: 'SpaceX' },
+  { name: 'OpenAI' },
+  { name: 'Anthropic' },
+  { name: 'Databricks' },
+  { name: 'Stripe' },
 ]
 
 // ===========================================================================
@@ -192,7 +197,7 @@ export default function PrivateEquityOnChain() {
             </h2>
 
             <ul className="mt-10 divide-y divide-zinc-300/60 sm:mt-14">
-              {companies.map(({ name, valuation }, i) => (
+              {companies.map(({ name }, i) => (
                 <li
                   key={name}
                   className={`grid grid-cols-[1fr_auto] items-center gap-4 px-2 py-5 sm:grid-cols-[1fr_1fr_auto] sm:gap-8 sm:py-7 ${companyRowBg(i)}`}
@@ -209,9 +214,6 @@ export default function PrivateEquityOnChain() {
                   </div>
                   <div className="text-xl font-extrabold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl">
                     {name}
-                  </div>
-                  <div className="text-right text-base font-medium text-zinc-700 sm:text-lg md:text-xl">
-                    {valuation}
                   </div>
                 </li>
               ))}
@@ -231,11 +233,6 @@ export default function PrivateEquityOnChain() {
                 infrastructure on chain.
               </p>
 
-              <blockquote className="mt-8 border-l-2 border-zinc-300 pl-5 text-sm italic text-zinc-600 sm:mt-12 sm:text-base">
-                “While smaller, private equity has historically generated higher long-term
-                net returns, often outpacing the S&amp;P 500 over 10- and 20-year periods.”
-                <footer className="mt-2 not-italic text-xs text-zinc-500">— Start Engine</footer>
-              </blockquote>
             </div>
 
             <div className="border-t border-zinc-200 pt-8 md:border-l md:border-t-0 md:pt-0 md:pl-12">
