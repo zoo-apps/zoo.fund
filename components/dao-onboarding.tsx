@@ -175,8 +175,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">DAO Name *</label>
+              <label htmlFor="name" className="block text-sm font-medium mb-2">DAO Name *</label>
               <input
+                id="name"
                 type="text"
                 name="name"
                 value={formData.name}
@@ -188,8 +189,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Token Symbol *</label>
+              <label htmlFor="symbol" className="block text-sm font-medium mb-2">Token Symbol *</label>
               <input
+                id="symbol"
                 type="text"
                 name="symbol"
                 value={formData.symbol}
@@ -202,8 +204,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Tagline *</label>
+              <label htmlFor="tagline" className="block text-sm font-medium mb-2">Tagline *</label>
               <input
+                id="tagline"
                 type="text"
                 name="tagline"
                 value={formData.tagline}
@@ -216,8 +219,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Focus Area *</label>
+              <label htmlFor="focusArea" className="block text-sm font-medium mb-2">Focus Area *</label>
               <select
+                id="focusArea"
                 name="focusArea"
                 value={formData.focusArea}
                 onChange={handleChange}
@@ -233,8 +237,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Funding Goal (USD) *</label>
+              <label htmlFor="fundingGoal" className="block text-sm font-medium mb-2">Funding Goal (USD) *</label>
               <input
+                id="fundingGoal"
                 type="text"
                 name="fundingGoal"
                 value={formData.fundingGoal}
@@ -256,8 +261,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Description *</label>
+              <label htmlFor="description" className="block text-sm font-medium mb-2">Description *</label>
               <textarea
+                id="description"
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
@@ -269,8 +275,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Mission Statement *</label>
+              <label htmlFor="mission" className="block text-sm font-medium mb-2">Mission Statement *</label>
               <textarea
+                id="mission"
                 name="mission"
                 value={formData.mission}
                 onChange={handleChange}
@@ -282,8 +289,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Partner Organizations</label>
+              <label htmlFor="partners" className="block text-sm font-medium mb-2">Partner Organizations</label>
               <textarea
+                id="partners"
                 name="partners"
                 value={formData.partners}
                 onChange={handleChange}
@@ -304,8 +312,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Multisig Address *</label>
+              <label htmlFor="multisig" className="block text-sm font-medium mb-2">Multisig Address *</label>
               <input
+                id="multisig"
                 type="text"
                 name="multisig"
                 value={formData.multisig}
@@ -318,8 +327,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Contact Email *</label>
+              <label htmlFor="contactEmail" className="block text-sm font-medium mb-2">Contact Email *</label>
               <input
+                id="contactEmail"
                 type="email"
                 name="contactEmail"
                 value={formData.contactEmail}
@@ -331,8 +341,9 @@ export function DAOOnboardingForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Website</label>
+              <label htmlFor="website" className="block text-sm font-medium mb-2">Website</label>
               <input
+                id="website"
                 type="url"
                 name="website"
                 value={formData.website}
@@ -344,8 +355,9 @@ export function DAOOnboardingForm() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium mb-2">Twitter Handle</label>
+                <label htmlFor="twitter" className="block text-sm font-medium mb-2">Twitter Handle</label>
                 <input
+                id="twitter"
                   type="text"
                   name="twitter"
                   value={formData.twitter}
@@ -356,8 +368,9 @@ export function DAOOnboardingForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Discord Invite</label>
+                <label htmlFor="discord" className="block text-sm font-medium mb-2">Discord Invite</label>
                 <input
+                id="discord"
                   type="text"
                   name="discord"
                   value={formData.discord}
