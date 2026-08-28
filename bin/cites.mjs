@@ -32,10 +32,23 @@ export const surfaces = ['app/**/*.tsx', 'app/**/*.ts', 'components/**/*.tsx', '
  *
  * A block page is not a missing page. These serve 403 or 429 to anything that
  * is not a browser, so following them here would report a fabrication that is
- * not one — and a check that cries wolf gets switched off, which is worse than
- * not having it.
+ * not one — and a check that cries wolf gets switched off.
+ *
+ * The exemption is the dangerous part, so each one carries a `control`: a URL
+ * on that host which certainly exists. If the control answers 200, the host is
+ * not blocking us, the exemption is hiding real failures, and {@link dead}
+ * refuses to run rather than report a clean sweep it cannot stand behind.
+ *
+ * nature.com used to be on this list. It is the exact host this file's opening
+ * paragraph names as the fabrication it exists to catch, and it was exempted on
+ * the assumption that a 404 from it meant blocking. It does not: a real article
+ * returns 200 and an invented slug returns 404. Five fabricated Nature
+ * citations sat behind that exemption while this reported nothing wrong.
  */
-export const opaque = [/^https?:\/\/(www\.)?(worldwildlife\.org|coindesk\.com|nature\.com)\//]
+export const opaque = [
+  { host: /^https?:\/\/(www\.)?worldwildlife\.org\//, control: 'https://www.worldwildlife.org/' },
+  { host: /^https?:\/\/(www\.)?coindesk\.com\//, control: 'https://www.coindesk.com/' },
+]
 
 /** Links that are addresses rather than claims — an explorer, a template. */
 const notCitations = [
@@ -43,6 +56,8 @@ const notCitations = [
   /zooscan\.io\/address\/$/,
   /** A form placeholder. Nothing follows the slashes, so there is no source. */
   /^https:\/\/$/,
+  /** A template literal. The URL is built at runtime and cites nothing. */
+  /\$\{/,
 ]
 
 export function cited(patterns = surfaces) {
@@ -50,7 +65,10 @@ export function cited(patterns = surfaces) {
   for (const pattern of patterns) {
     for (const file of globSync(pattern, { cwd: root })) {
       const source = readFileSync(resolve(root, file), 'utf8')
-      for (const raw of source.match(/https:\/\/[a-zA-Z0-9./_%-]+/g) ?? []) {
+      // Up to whitespace or a quote, so a query string survives. The old class
+      // stopped at `?`, which turned every youtube.com/watch?v=<id> into a bare
+      // /watch — a URL that always answers 200 and names no video.
+      for (const raw of source.match(/https:\/\/[^\s"'`<>\\)]+/g) ?? []) {
         const url = raw.replace(/[.,)]+$/, '')
         if (notCitations.some((r) => r.test(url))) continue
         if (!found.has(url)) found.set(url, file)
@@ -60,22 +78,58 @@ export function cited(patterns = surfaces) {
   return [...found].map(([url, file]) => ({ url, file })).sort((a, b) => a.url.localeCompare(b.url))
 }
 
-/** Follow one, and say what came back. */
+/**
+ * Some hosts answer 200 for something that is not there.
+ *
+ * YouTube serves the player shell for any id, real or invented, so a
+ * status-only check calls every made-up video reachable. Reading the body for
+ * "unavailable" does not work either — the phrase is in the shell of a page
+ * that plays perfectly well, so it fails real videos.
+ *
+ * oEmbed answers the actual question: 200 with metadata for a video that
+ * exists, 400 for one that does not.
+ */
+const indirect = [
+  {
+    host: /^https:\/\/(www\.)?(youtube\.com|youtu\.be)\//,
+    ask: (url) => `https://www.youtube.com/oembed?url=${encodeURIComponent(url)}&format=json`,
+  },
+]
+
+/** Follow one, and say what came back. 0 for unreachable, 404 for soft-gone. */
 export async function reach(url, ms = 12_000) {
   const stop = AbortSignal.timeout(ms)
   try {
-    const r = await fetch(url, { redirect: 'follow', signal: stop })
+    const via = indirect.find((i) => i.host.test(url))
+    const r = await fetch(via ? via.ask(url) : url, { redirect: 'follow', signal: stop })
     return r.status
   } catch {
     return 0
   }
 }
 
+/** An exemption that is not earned hides exactly what this looks for. */
+export async function unearned() {
+  const out = []
+  for (const { host, control } of opaque) {
+    if (await reach(control) === 200) out.push({ host: String(host), control })
+  }
+  return out
+}
+
 /** Every cited source that could not be reached. */
 export async function dead(links = cited()) {
+  const wrong = await unearned()
+  if (wrong.length) {
+    throw new Error(
+      'these hosts answer normally, so exempting them hides real failures: ' +
+        wrong.map((w) => w.control).join(', '),
+    )
+  }
+
   const out = []
   for (const { url, file } of links) {
-    if (opaque.some((r) => r.test(url))) continue
+    if (opaque.some(({ host }) => host.test(url))) continue
     const status = await reach(url)
     if (status !== 200) out.push({ url, file, status })
   }

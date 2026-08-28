@@ -173,16 +173,6 @@ export const daos: DAO[] = [
 
     resources: [
       {
-        title: 'Environmental DNA: A powerful tool for ocean conservation',
-        url: 'https://www.nature.com/articles/s41559-020-01334-9',
-        type: 'paper'
-      },
-      {
-        title: 'How eDNA is revolutionizing marine conservation',
-        url: 'https://www.youtube.com/watch?v=ocean-edna',
-        type: 'video'
-      },
-      {
         title: 'Blue Economy: Sustainable Ocean Development',
         url: 'https://www.worldbank.org/en/topic/oceans-fisheries-and-coastal-economies',
         type: 'article'
@@ -290,16 +280,6 @@ export const daos: DAO[] = [
     valueCaptureModel: 'SharkDAO creates a virtuous cycle where ecotourism funds conservation while building public support for shark protection. Token holders access exclusive diving experiences at premium locations worldwide, with 70% of dive revenue funding direct conservation action. Partnerships with elite dive operators provide members with unforgettable encounters while generating sustainable funding streams. Governance rights allow the community to direct funding toward highest-impact conservation projects, from population monitoring to anti-finning enforcement. As shark populations recover and diving destinations expand, token value accrues through both increased dive bookings and conservation impact. The model proves that sharks are worth more alive than dead—estimated at $1.9M per shark over its lifetime in tourism value versus $50-100 for fins. Additional revenue comes from merchandise, documentary licensing, and corporate partnerships with ocean-focused brands. By aligning economic incentives with conservation outcomes, SharkDAO demonstrates a scalable model for protecting apex predators while rewarding community participation.',
 
     resources: [
-      {
-        title: 'The Economic Value of Sharks to Tourism',
-        url: 'https://www.nature.com/articles/sharks-tourism-value',
-        type: 'paper'
-      },
-      {
-        title: 'Why Sharks Matter: The Apex Predator Perspective',
-        url: 'https://www.youtube.com/watch?v=shark-conservation',
-        type: 'video'
-      },
     ]
   },
   {
@@ -397,16 +377,6 @@ export const daos: DAO[] = [
     valueCaptureModel: 'BelugaDAO creates value by making Arctic conservation accessible and sustainable. Token holders access world-class beluga encounters and northern lights experiences that would typically cost $8,000-12,000 per person, while knowing their participation directly funds whale protection. Partnership with Frontiers North provides operational expertise and infrastructure in Churchill, Manitoba—beluga capital of the world. Revenue from tourism operations flows directly to sanctuary development, research programs, and indigenous community partnerships. As Arctic tourism grows 15% annually, BelugaDAO captures value from the \"last chance tourism\" trend while ensuring visits support rather than harm whale populations. The model demonstrates that responsible ecotourism can fund conservation in remote regions where traditional funding mechanisms struggle. Token value accrues through both tourism revenue and the appreciation of protected beluga habitat as climate change makes Arctic conservation increasingly critical.',
 
     resources: [
-      {
-        title: 'Beluga Whales in a Changing Arctic',
-        url: 'https://www.nature.com/articles/arctic-beluga-climate',
-        type: 'paper'
-      },
-      {
-        title: 'Churchill Beluga Whale Migration',
-        url: 'https://www.youtube.com/watch?v=beluga-churchill',
-        type: 'video'
-      },
     ]
   },
   {
@@ -505,19 +475,9 @@ export const daos: DAO[] = [
 
     resources: [
       {
-        title: 'Hawaiian Coral Reef Resilience to Climate Change',
-        url: 'https://www.nature.com/articles/hawaii-reef-resilience',
-        type: 'paper'
-      },
-      {
         title: 'Traditional Hawaiian Ocean Management Practices',
         url: 'https://www.papahanaumokuakea.gov/education/ahupuaa.html',
         type: 'report'
-      },
-      {
-        title: 'Kauai Coral Restoration Project Documentary',
-        url: 'https://www.youtube.com/watch?v=kauai-coral',
-        type: 'video'
       },
     ]
   },
@@ -621,11 +581,6 @@ export const daos: DAO[] = [
         url: 'https://www.worldwildlife.org/publications/captive-big-cats',
         type: 'paper'
       },
-      {
-        title: 'Tiger Conservation Success Stories from India',
-        url: 'https://www.youtube.com/watch?v=india-tiger-success',
-        type: 'video'
-      },
     ]
   },
   {
@@ -717,16 +672,6 @@ export const daos: DAO[] = [
     valueCaptureModel: 'ResearchDAO captures value through a hybrid open-source/commercial model. Core AI models and research are published openly, accelerating conservation science globally. However, enterprise deployment, support, and custom model training generate revenue shared with token holders. As conservation organizations, governments, and corporations adopt ResearchDAO AI tools, licensing fees and support contracts create sustainable revenue. Token holders benefit from both direct revenue sharing and the appreciation of conservation AI as critical infrastructure. The DAO also captures value through IP licensing for commercial applications (agriculture, forestry, environmental monitoring) while ensuring conservation use remains free. By funding the full research pipeline—from basic science to field deployment—ResearchDAO builds a portfolio of AI tools that compound in value as adoption scales.',
 
     resources: [
-      {
-        title: 'AI for Conservation: A Comprehensive Review',
-        url: 'https://www.nature.com/articles/ai-conservation-2024',
-        type: 'paper'
-      },
-      {
-        title: 'Machine Learning for Wildlife Monitoring',
-        url: 'https://www.youtube.com/watch?v=ml-wildlife',
-        type: 'video'
-      },
       {
         title: 'Predictive Poaching Prevention: Results from the Field',
         url: 'https://conservationai.org/poaching-prediction',
@@ -830,11 +775,6 @@ export const daos: DAO[] = [
 
     resources: [
       {
-        title: 'How DAOs Are Revolutionizing Conservation',
-        url: 'https://www.youtube.com/watch?v=conservation-daos',
-        type: 'video'
-      },
-      {
         title: 'Crypto-Philanthropy: The Future of Giving',
         url: 'https://www.coindesk.com/crypto-philanthropy-conservation',
         type: 'article'
@@ -936,11 +876,6 @@ export const daos: DAO[] = [
     valueCaptureModel: 'ZenDAO creates value by making conservation AI accessible where it\'s needed most—in the field. While large cloud-based models require connectivity and impose latency, ZenLM runs locally on devices rangers already carry. This enables real-time species identification, instant threat assessment, and immediate decision support without internet dependence. Token holders capture value through commercial licensing to conservation tech companies, government agencies, and ecotourism operators who deploy ZenLM at scale. The open-source core ensures broad conservation impact while premium features (custom training, priority support, enterprise deployment) generate revenue. As edge AI becomes critical for field conservation, ZenLM\'s specialization creates defensible moats—conservation-specific training data, field-tested optimization, and tight integration with conservation workflows. Token value accrues through adoption metrics (deployments, inference requests) and the growing recognition that effective conservation requires AI that works offline.',
 
     resources: [
-      {
-        title: 'Field Deployment: ZenLM in African Wildlife Reserves',
-        url: 'https://www.youtube.com/watch?v=zenlm-africa',
-        type: 'video'
-      },
     ],
 
     news: [
