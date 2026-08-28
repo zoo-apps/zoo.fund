@@ -37,6 +37,7 @@ export function DAOOnboardingForm() {
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [missing, setMissing] = useState<string[]>([])
 
   const focusAreas = [
     { value: 'marine', label: '🌊 Marine Conservation', icon: '🧬' },
@@ -58,8 +59,32 @@ export function DAOOnboardingForm() {
   // arrives — which the previous version did not: it logged to the console,
   // waited two seconds to look like a network call, and then said a team would
   // reply within days. Nothing was sent and nobody was going to reply.
+  // Steps one and two are unmounted by the time the button on step three is
+  // pressed, so the browser cannot check the `required` marks it was given —
+  // every field on the earlier steps could be left blank and the form would
+  // still send. Checked here, where all the answers still exist.
+  const REQUIRED: Array<[keyof typeof formData, string]> = [
+    ['name', 'DAO name'],
+    ['symbol', 'Token symbol'],
+    ['tagline', 'Tagline'],
+    ['focusArea', 'Focus area'],
+    ['fundingGoal', 'Target'],
+    ['description', 'Description'],
+    ['mission', 'Mission'],
+    ['multisig', 'Treasury address'],
+    ['contactEmail', 'Contact email'],
+  ]
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    const blank = REQUIRED.filter(([k]) => !String(formData[k] ?? '').trim())
+    if (blank.length) {
+      setMissing(blank.map(([, label]) => label))
+      setStep(1)
+      return
+    }
+    setMissing([])
     setSubmitting(true)
 
     const body = [
@@ -147,6 +172,11 @@ export function DAOOnboardingForm() {
       </div>
 
       {/* Form */}
+      {missing.length > 0 && (
+        <div role="alert" className="mb-6 rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-200">
+          Still needed: {missing.join(', ')}.
+        </div>
+      )}
       <form onSubmit={handleSubmit} className="bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-2xl p-8">
         {/* Step 1: Basic Information */}
         {step === 1 && (

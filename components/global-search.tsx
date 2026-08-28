@@ -130,14 +130,21 @@ export function GlobalSearch() {
       {/* Search Modal */}
       <div className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh] px-4">
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Search"
           className="w-full max-w-2xl bg-black border border-white/20 rounded-2xl shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Search Input */}
           <div className="border-b border-white/10">
             <div className="flex items-center gap-3 px-6 py-4">
-              <span className="text-2xl">🔍</span>
+              <span className="text-2xl" aria-hidden="true">🔍</span>
+              <label htmlFor="site-search" className="sr-only">
+                Search DAOs, pages and actions
+              </label>
               <input
+                id="site-search"
                 type="text"
                 value={query}
                 onChange={(e) => {
@@ -267,10 +274,11 @@ export function SearchTrigger() {
   return (
     <button
       onClick={handleClick}
+      aria-label="Search"
       className="group px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white/60 hover:text-white hover:border-white/20 transition-all flex items-center gap-2"
     >
-      <span className="hidden md:inline">Search...</span>
-      <span className="md:hidden">🔍</span>
+      <span className="hidden md:inline" aria-hidden="true">Search...</span>
+      <span className="md:hidden" aria-hidden="true">🔍</span>
       <kbd className="hidden sm:inline-block px-1.5 py-0.5 bg-white/5 border border-white/10 rounded text-xs group-hover:border-white/20 transition-colors">
         {isMac ? '⌘K' : 'Ctrl+K'}
       </kbd>
