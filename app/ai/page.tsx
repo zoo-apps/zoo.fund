@@ -2,6 +2,11 @@ import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 
+export const metadata = {
+  title: 'AI for conservation | Zoo Fund',
+  description: 'Edge models and open research applied to wildlife monitoring.',
+}
+
 export default function AIPage() {
   const aiProjects = [
     {

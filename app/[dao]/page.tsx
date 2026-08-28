@@ -25,6 +25,32 @@ export function generateStaticParams() {
   }))
 }
 
+// Every DAO page served the site-wide title, so eight pages were
+// indistinguishable to a search engine, a shared link and a screen reader
+// announcing the document.
+export async function generateMetadata({ params }: { params: Promise<{ dao: string }> }) {
+  const { dao: daoId } = await params
+  const dao = getDAO(daoId)
+  if (!dao) return { title: 'Not found | Zoo Fund' }
+
+  return {
+    title: `${dao.name} | Zoo Fund`,
+    description: dao.tagline,
+    openGraph: {
+      type: 'website',
+      siteName: 'Zoo Fund',
+      title: `${dao.name} | Zoo Fund`,
+      description: dao.tagline,
+      url: `https://zoo.fund/${dao.id}`,
+    },
+    twitter: {
+      card: 'summary',
+      title: `${dao.name} | Zoo Fund`,
+      description: dao.tagline,
+    },
+  }
+}
+
 export default async function DAOPage({ params }: { params: Promise<{ dao: string }> }) {
   const { dao: daoId } = await params
   const dao = getDAO(daoId)
