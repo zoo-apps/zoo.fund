@@ -147,7 +147,7 @@ export const daos: DAO[] = [
         date: '2024 Q2',
         title: 'Machine Learning Pipeline',
         status: 'completed',
-        description: 'Built AI models for species identification from genetic sequences. Achieved 94% accuracy on known species, discovered 12 potential new species.'
+        description: 'Built AI models for species identification from genetic sequences.'
       },
       {
         date: '2024 Q3',
@@ -255,7 +255,7 @@ export const daos: DAO[] = [
         date: '2024 Q2',
         title: 'First Shark Diving Expeditions',
         status: 'completed',
-        description: 'Organized member diving trips to Guadalupe Island (great whites) and Cocos Island (hammerheads). 100% positive feedback, generated $45K for conservation.'
+        description: 'Organized member diving trips to Guadalupe Island (great whites) and Cocos Island (hammerheads).'
       },
       {
         date: '2024 Q3',
@@ -352,7 +352,7 @@ export const daos: DAO[] = [
         date: '2024 Q2',
         title: 'First Churchill Expeditions',
         status: 'completed',
-        description: 'Launched inaugural beluga and polar bear viewing tours. 24 members participated, raising $32K for sanctuary development.'
+        description: 'Launched inaugural beluga and polar bear viewing tours.'
       },
       {
         date: '2024 Q3',
@@ -647,13 +647,13 @@ export const daos: DAO[] = [
         date: '2024 Q2',
         title: 'Wildlife Vision Foundation Model',
         status: 'completed',
-        description: 'Trained large vision model on 10M+ wildlife images. Achieves 96% accuracy on 5,000 species, outperforming human experts on many taxa.'
+        description: 'Trained a large vision model for wildlife image recognition.'
       },
       {
         date: '2024 Q3',
         title: 'Anti-Poaching AI Deployment',
         status: 'in-progress',
-        description: 'Partnering with 5 African wildlife reserves to deploy predictive patrol optimization. Early results show 40% reduction in poaching incidents.'
+        description: 'Deploying predictive patrol optimization with wildlife reserves.'
       },
       {
         date: '2024 Q4',
@@ -740,16 +740,20 @@ export const daos: DAO[] = [
 
     roadmap: [
       {
-        date: '2024 Q1',
+        // The IRS determination is dated 1 June 2025, not 2024 Q1. The exemption
+        // is real — EIN 88-3538992, subsection 3, and it is the one claim on
+        // this page that checks out against a public record — so the date should
+        // match the record rather than predate it by a year.
+        date: '2025 Q2',
         title: 'Zoo Foundation 501(c)(3) Status',
         status: 'completed',
-        description: 'Achieved tax-exempt public charity status (EIN: 88-3538992). Enables tax-deductible donations and grant funding for conservation projects.'
+        description: 'Tax-exempt public charity status, determination dated June 2025 (EIN: 88-3538992).'
       },
       {
         date: '2024 Q2',
         title: 'First Conservation DAOs Launch',
         status: 'completed',
-        description: 'Launched OceanDAO, SharkDAO, and ResearchDAO. Deployed $650K in initial conservation funding across 3 focus areas.'
+        description: 'Launched OceanDAO, SharkDAO and ResearchDAO.'
       },
       {
         date: '2024 Q3',
@@ -845,7 +849,7 @@ export const daos: DAO[] = [
         date: '2024 Q1',
         title: 'ZenLM 0.5B Release',
         status: 'completed',
-        description: 'Launched first ZenLM model focused on species identification. Runs on smartphones, achieves 89% accuracy on 1,000 common species.'
+        description: 'Launched the first ZenLM model for species identification, sized to run on a phone.'
       },
       {
         date: '2024 Q2',

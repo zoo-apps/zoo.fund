@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useAccount } from 'wagmi'
 
 interface DAOOnboardingFormData {
   name: string
@@ -20,7 +19,6 @@ interface DAOOnboardingFormData {
 }
 
 export function DAOOnboardingForm() {
-  const { isConnected, address } = useAccount()
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState<DAOOnboardingFormData>({
     name: '',
@@ -82,22 +80,6 @@ export function DAOOnboardingForm() {
     setSubmitting(false)
   }
 
-  if (!isConnected) {
-    return (
-      <div className="max-w-2xl mx-auto bg-gradient-to-br from-white/5 to-white/2 border border-white/10 rounded-2xl p-12 text-center">
-        <div className="w-20 h-20 bg-[#667eea]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <span className="text-4xl">🔗</span>
-        </div>
-        <h3 className="text-2xl font-bold mb-4">Connect Your Wallet</h3>
-        <p className="text-white/70 mb-6">
-          To launch a new conservation DAO, please connect your wallet first. This ensures secure governance and transparent funding.
-        </p>
-        <p className="text-sm text-white/50">
-          Use the "Connect Wallet" button in the top right corner
-        </p>
-      </div>
-    )
-  }
 
   if (submitted) {
     return (

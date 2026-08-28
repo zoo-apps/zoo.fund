@@ -144,22 +144,17 @@ export default function Home() {
               <p className="text-white/70 mb-6 sm:mb-8 text-sm sm:text-base">
                 Get exclusive updates about conservation initiatives, research breakthroughs, and DAO progress
               </p>
-              <form className="flex gap-4 max-w-xl mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 bg-white/5 border border-white/10 rounded-lg px-6 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#667eea]"
-                />
-                <button
-                  type="submit"
-                  className="px-8 py-3 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-lg font-semibold hover:opacity-90 transition-opacity"
-                >
-                  Subscribe
-                </button>
-              </form>
-              <p className="text-xs text-white/40 mt-4">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
+              {/* Was a form with no action, no handler and an unnamed input:
+                  Subscribe reloaded the page and threw the address away, under a
+                  line promising to respect privacy about data never collected.
+                  This site is a static export with nowhere to post to, so it
+                  asks in the one way that arrives. */}
+              <a
+                href="mailto:contact@zoo.ngo?subject=Updates"
+                className="inline-block px-8 py-3 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              >
+                Email us to get updates
+              </a>
             </div>
           </div>
         </section>

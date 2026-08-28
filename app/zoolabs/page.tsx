@@ -214,13 +214,19 @@ export default function ZooLabsPage() {
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                {/* Naming an organisation under "Collaborating with leading
+                    institutions" is a claim about them, not about us, and they
+                    have not made it. World Wildlife Fund, Conservation
+                    International, Ocean Conservancy and Wildlife Conservation
+                    Network are removed — the same authoring that produced this
+                    list also gave three DAOs an advisory board of real
+                    scientists who never agreed to it. What is left is our own
+                    lab and the one organisation named consistently elsewhere as
+                    a DAO partner. Add any of them back with a person who can
+                    confirm it. */}
                 {[
                   'Hanzo AI Research',
-                  'Wildlife Conservation Network',
-                  'Ocean Conservancy',
                   'Shark Stewards',
-                  'Conservation International',
-                  'World Wildlife Fund'
                 ].map((partner, index) => (
                   <div key={index} className="bg-white/3 border border-white/10 rounded-xl p-6 text-center hover:border-[#667eea]/50 transition-all">
                     <p className="font-semibold text-white/80">{partner}</p>
