@@ -21,16 +21,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # pnpm, because that is what this repository is. `npm install` ignores
+      # pnpm-lock.yaml entirely — every build resolved a fresh dependency tree —
+      # and npm's flat hoisting exposes @coinbase/cdp-sdk to webpack, which then
+      # fails on @x402/evm subpaths that are never installed. pnpm's strict
+      # layout does not, which is why this builds locally and not here.
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: npm run build
+        run: pnpm build
         env:
           NODE_ENV: production
 
