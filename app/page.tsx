@@ -22,12 +22,6 @@ export default function Home() {
   ]
 
   // Transform DAOs into ProjectCardProps for featured section
-  const calculateProgress = (raised: string, goal?: string) => {
-    if (!goal) return undefined
-    const raisedNum = parseFloat(raised.replace(/[$,]/g, ''))
-    const goalNum = parseFloat(goal.replace(/[$,]/g, ''))
-    return Math.round((raisedNum / goalNum) * 100)
-  }
 
   const getCategoryFromDAO = (daoId: string): string => {
     const categoryMap: Record<string, string> = {
@@ -51,9 +45,7 @@ export default function Home() {
     categoryColor: '#667eea',
     tagline: dao.tagline,
     description: dao.description,
-    fundingAmount: dao.raised,
-    fundingGoal: dao.goal,
-    progressPercentage: calculateProgress(dao.raised, dao.goal),
+    fundingAmount: dao.goal,
     status: 'active' as const,
     members: dao.members,
     proposals: dao.proposals,

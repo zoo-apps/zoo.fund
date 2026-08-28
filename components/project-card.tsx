@@ -138,7 +138,7 @@ export function ProjectCard({
               / {fundingGoal}
             </span>
           )}
-          <span className="text-xs text-white/40 ml-auto">Raised</span>
+          <span className="text-xs text-white/40 ml-auto">Target</span>
         </div>
 
         {/* Metadata: Members + Proposals */}

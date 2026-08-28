@@ -97,14 +97,10 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
 
             {/* DAO Stats */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-              <div className="bg-white/3 border border-white/10 rounded-xl p-6">
-                <h3 className="text-lg font-semibold mb-2">💰 Treasury</h3>
-                <p className="text-2xl font-bold text-[#667eea]">{dao.treasury}</p>
-                <p className="text-xs text-white/60 mt-2">
-                  Multisig: {dao.multisig}
-                </p>
-              </div>
-
+              {/* No treasury card. The figure was a literal in lib/daos.ts and
+                  the line under it read "Multisig:" followed by nothing, because
+                  no DAO here publishes an address. A balance nobody can check,
+                  labelled with a link that does not exist, is not a statistic. */}
               <div className="bg-white/3 border border-white/10 rounded-xl p-6">
                 <h3 className="text-lg font-semibold mb-2">👥 Members</h3>
                 <p className="text-2xl font-bold text-[#667eea]">{dao.members}</p>
