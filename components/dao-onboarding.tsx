@@ -87,7 +87,7 @@ export function DAOOnboardingForm() {
         <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <span className="text-4xl">✅</span>
         </div>
-        <h3 className="text-2xl font-bold mb-4">Your mail client should be open</h3>
+        <h2 className="text-2xl font-bold mb-4">Your mail client should be open</h2>
         <p className="text-white/80 mb-6">
           Send the message and <strong>{formData.name}</strong> reaches us. If nothing
           opened, write to{' '}
@@ -152,7 +152,7 @@ export function DAOOnboardingForm() {
         {step === 1 && (
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold mb-2">Basic Information</h3>
+              <h2 className="text-2xl font-bold mb-2">Basic Information</h2>
               <p className="text-white/60 text-sm">Tell us about your conservation DAO</p>
             </div>
 
@@ -422,16 +422,16 @@ export function DAOOnboardingPage() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#667eea]/10 border border-[#667eea]/30 rounded-full mb-6">
             <span className="w-2 h-2 bg-[#667eea] rounded-full animate-pulse"></span>
-            <span className="text-sm text-[#667eea] font-semibold">Self-Service Onboarding</span>
+            <span className="text-sm text-[#667eea] font-semibold">Listing request</span>
           </div>
-          <h1 className="text-5xl font-black mb-6 tracking-tight">Launch Your Conservation DAO</h1>
+          <h1 className="text-5xl font-black mb-6 tracking-tight">Open a raise</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto mb-8">
-            Join the decentralized conservation movement. Launch a specialized DAO, raise funds transparently, and coordinate conservation efforts globally.
+            Name the question your DAO exists to answer. If it fits, we publish a page for it here — and the DAO raises on its own terms, holding its own treasury.
           </p>
           <div className="flex items-center justify-center gap-12 text-sm text-white/60">
             <div className="flex items-center gap-2">
               <span className="text-2xl">⚡</span>
-              <span>Fast approval process</span>
+              <span>We read every one</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">🔒</span>
@@ -470,7 +470,7 @@ export function DAOOnboardingPage() {
               }
             ].map((faq, i) => (
               <div key={i} className="bg-white/3 border border-white/10 rounded-xl p-6">
-                <h4 className="text-lg font-semibold mb-2">{faq.q}</h4>
+                <h3 className="text-lg font-semibold mb-2">{faq.q}</h3>
                 <p className="text-white/70 text-sm">{faq.a}</p>
               </div>
             ))}

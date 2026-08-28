@@ -182,9 +182,9 @@ export function GlobalSearch() {
                     {/* Content */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-white truncate">
+                        <span className="block font-semibold text-white truncate">
                           {item.title}
-                        </h3>
+                        </span>
                         <span className={`text-xs px-2 py-0.5 rounded-full shrink-0 ${getCategoryColor(item.category)}`}>
                           {getCategoryLabel(item.category)}
                         </span>

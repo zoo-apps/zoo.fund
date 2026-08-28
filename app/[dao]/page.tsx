@@ -98,7 +98,7 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
             {/* DAO Stats */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               <div className="bg-white/3 border border-white/10 rounded-xl p-6">
-                <h4 className="text-lg font-semibold mb-2">💰 Treasury</h4>
+                <h3 className="text-lg font-semibold mb-2">💰 Treasury</h3>
                 <p className="text-2xl font-bold text-[#667eea]">{dao.treasury}</p>
                 <p className="text-xs text-white/60 mt-2">
                   Multisig: {dao.multisig}
@@ -106,7 +106,7 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
               </div>
 
               <div className="bg-white/3 border border-white/10 rounded-xl p-6">
-                <h4 className="text-lg font-semibold mb-2">👥 Members</h4>
+                <h3 className="text-lg font-semibold mb-2">👥 Members</h3>
                 <p className="text-2xl font-bold text-[#667eea]">{dao.members}</p>
                 <p className="text-xs text-white/60 mt-2">
                   Token Holders
@@ -114,12 +114,12 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
               </div>
 
               <div className="bg-white/3 border border-white/10 rounded-xl p-6">
-                <h4 className="text-lg font-semibold mb-2">🗳️ Proposals</h4>
+                <h3 className="text-lg font-semibold mb-2">🗳️ Proposals</h3>
                 <p className="text-2xl font-bold text-[#667eea]">{dao.proposals}</p>
               </div>
 
               <div className="bg-white/3 border border-white/10 rounded-xl p-6">
-                <h4 className="text-lg font-semibold mb-2">🎯 Goal</h4>
+                <h3 className="text-lg font-semibold mb-2">🎯 Goal</h3>
                 <p className="text-2xl font-bold text-[#667eea]">{dao.goal}</p>
                 <p className="text-xs text-white/60 mt-2">
                   Funding Target
@@ -168,9 +168,9 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                                   {item.date}
                                 </span>
                               </div>
-                              <h4 className="text-xl font-bold mb-3 group-hover:text-[#667eea] transition-colors">
+                              <h3 className="text-xl font-bold mb-3 group-hover:text-[#667eea] transition-colors">
                                 {item.title}
-                              </h4>
+                              </h3>
                               <p className="text-sm text-white/70">{item.description}</p>
                             </a>
                           ))}
@@ -201,9 +201,9 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                               <div className="flex items-center gap-3 mb-4">
                                 <span className="text-3xl">📊</span>
                                 <div>
-                                  <h4 className="font-bold group-hover:text-[#667eea] transition-colors">
+                                  <h3 className="font-bold group-hover:text-[#667eea] transition-colors">
                                     {artifact.title}
-                                  </h4>
+                                  </h3>
                                   <p className="text-xs text-white/60">{artifact.format}</p>
                                 </div>
                               </div>
@@ -228,7 +228,7 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                               className="bg-white/3 border border-white/10 rounded-xl p-6"
                             >
                               <div className="text-4xl mb-4">{area.icon}</div>
-                              <h4 className="text-xl font-bold mb-2">{area.title}</h4>
+                              <h3 className="text-xl font-bold mb-2">{area.title}</h3>
                               <p className="text-sm text-white/70">{area.description}</p>
                             </div>
                           ))}
@@ -250,7 +250,7 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                           {/* Distribution */}
                           <div className="bg-white/3 border border-white/10 rounded-xl p-6">
-                            <h4 className="text-xl font-bold mb-4">Token Distribution</h4>
+                            <h3 className="text-xl font-bold mb-4">Token Distribution</h3>
                             <div className="space-y-3">
                               {dao.tokenomics.distribution.map((item, index) => (
                                 <div key={index} className="flex justify-between items-center">
@@ -263,7 +263,7 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
 
                           {/* Utility */}
                           <div className="bg-white/3 border border-white/10 rounded-xl p-6">
-                            <h4 className="text-xl font-bold mb-4">Token Utility</h4>
+                            <h3 className="text-xl font-bold mb-4">Token Utility</h3>
                             <ul className="space-y-2">
                               {dao.tokenomics.utility.map((item, index) => (
                                 <li key={index} className="flex items-start gap-2">
@@ -288,7 +288,7 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                               className="bg-white/3 border border-white/10 rounded-xl p-6"
                             >
                               <div className="text-4xl mb-3">{member.avatar}</div>
-                              <h4 className="text-lg font-bold mb-1">{member.name}</h4>
+                              <h3 className="text-lg font-bold mb-1">{member.name}</h3>
                               <p className="text-sm text-[#667eea] mb-3">{member.role}</p>
                               <p className="text-sm text-white/70">{member.bio}</p>
                             </div>
@@ -311,7 +311,7 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                                 <div className="text-3xl">📅</div>
                                 <div className="flex-1">
                                   <div className="flex items-center gap-3 mb-2">
-                                    <h4 className="text-xl font-bold">{milestone.title}</h4>
+                                    <h3 className="text-xl font-bold">{milestone.title}</h3>
                                     <span
                                       className={`px-3 py-1 text-xs font-semibold rounded-full ${
                                         milestone.status === 'completed'
@@ -359,9 +359,9 @@ export default async function DAOPage({ params }: { params: Promise<{ dao: strin
                               rel="noopener noreferrer"
                               className="group bg-white/3 border border-white/10 rounded-xl p-6 hover:border-[#667eea]/50 hover:bg-white/5 transition-all"
                             >
-                              <h4 className="font-bold mb-2 group-hover:text-[#667eea] transition-colors">
+                              <h3 className="font-bold mb-2 group-hover:text-[#667eea] transition-colors">
                                 {resource.title}
-                              </h4>
+                              </h3>
                               <p className="text-sm text-white/60 capitalize">{resource.type}</p>
                             </a>
                           ))}
