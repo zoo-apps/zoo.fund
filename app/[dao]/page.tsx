@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ dao: stri
   return {
     title: `${dao.name} | Zoo Fund`,
     description: dao.tagline,
+    alternates: { canonical: `/${dao.id}` },
     openGraph: {
       type: 'website',
       siteName: 'Zoo Fund',

@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zoo.fund'),
+  alternates: { canonical: '/' },
   title: 'Zoo Fund',
   description: 'Research DAOs raise on-chain for one named question, and publish what they find.',
   // Without these the site shares as a naked URL — no name, no description,

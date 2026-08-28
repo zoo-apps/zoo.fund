@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer'
 export const metadata = {
   title: 'AI for conservation | Zoo Fund',
   description: 'Edge models and open research applied to wildlife monitoring.',
+  alternates: { canonical: '/ai' },
 }
 
 export default function AIPage() {
